@@ -1,0 +1,29 @@
+# Vivado
+vivado_project/
+.Xil/
+*.jou
+*.log
+*.str
+*.backup.jou
+*.backup.log
+*.dcp
+*.bit
+*.bin
+*.ltx
+hs_err_pid*
+
+# Simulation
+sim/sim_build/
+sim/results.xml
+sim/*.vcd
+sim/*.fst
+sim/*.vvp
+sim/__pycache__/
+__pycache__/
+*.pyc
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

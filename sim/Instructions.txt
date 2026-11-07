@@ -1,0 +1,60 @@
+# addr      hex       instruction
+0x0000   123450B7   lui x1, 0x12345
+0x0004   67808093   addi x1, x1, 0x678
+0x0008   00000117   auipc x2, 0x0
+0x000C   06400193   addi x3, x0, 100
+0x0010   FCE00213   addi x4, x0, -50
+0x0014   004182B3   add x5, x3, x4
+0x0018   40418333   sub x6, x3, x4
+0x001C   0030F3B3   and x7, x1, x3
+0x0020   00326433   or x8, x4, x3
+0x0024   0010C4B3   xor x9, x1, x1
+0x0028   6FF0F513   andi x10, x1, 0x6FF
+0x002C   05506593   ori x11, x0, 0x55
+0x0030   FFF1C613   xori x12, x3, -1
+0x0034   00419693   slli x13, x3, 4
+0x0038   0080D713   srli x14, x1, 8
+0x003C   40125793   srai x15, x4, 1
+0x0040   0030D833   srl x16, x1, x3
+0x0044   004198B3   sll x17, x3, x4
+0x0048   40325933   sra x18, x4, x3
+0x004C   003229B3   slt x19, x4, x3
+0x0050   00323A33   sltu x20, x4, x3
+0x0054   0C81AA93   slti x21, x3, 200
+0x0058   0321BB13   sltiu x22, x3, 50
+0x005C   10000B93   addi x23, x0, 0x100
+0x0060   001BA023   sw x1, 0(x23)
+0x0064   000BAC03   lw x24, 0(x23)
+0x0068   003B8423   sb x3, 8(x23)
+0x006C   008B8C83   lb x25, 8(x23)
+0x0070   004B84A3   sb x4, 9(x23)
+0x0074   009B8D03   lb x26, 9(x23)
+0x0078   009BCD83   lbu x27, 9(x23)
+0x007C   001B9623   sh x1, 12(x23)
+0x0080   00CB9E03   lh x28, 12(x23)
+0x0084   00CB9823   sh x12, 16(x23)
+0x0088   010B9E83   lh x29, 16(x23)
+0x008C   010BDF03   lhu x30, 16(x23)
+0x0090   00318463   beq x3, x3, B1
+0x0094   3E706593   ori x11, x0, 999
+0x0098   00419463   bne x3, x4, B2
+0x009C   3E706593   ori x11, x0, 999
+0x00A0   00324463   blt x4, x3, B3
+0x00A4   3E706593   ori x11, x0, 999
+0x00A8   0041D463   bge x3, x4, B4
+0x00AC   3E706593   ori x11, x0, 999
+0x00B0   0041E463   bltu x3, x4, B5
+0x00B4   3E706593   ori x11, x0, 999
+0x00B8   00327463   bgeu x4, x3, B6
+0x00BC   3E706593   ori x11, x0, 999
+0x00C0   00418663   beq x3, x4, POISON
+0x00C4   00319463   bne x3, x3, POISON
+0x00C8   00800FEF   jal x31, J1
+0x00CC   3E706593   ori x11, x0, 999
+0x00D0   00000117   auipc x2, 0x0
+0x00D4   01010293   addi x5, x2, 16
+0x00D8   00028067   jalr x0, x5, 0
+0x00DC   3E706593   ori x11, x0, 999
+0x00E0   02A00713   addi x14, x0, 0x2A
+0x00E4   0000006F   jal x0, DONE
+0x00E8   0000006F   jal x0, 0   # terminator
